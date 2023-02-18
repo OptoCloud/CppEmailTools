@@ -13,7 +13,6 @@ constexpr bool IsValidLocalChar(char  c)
            c == '$'  ||
            c == '%'  ||
            c == '&'  ||
-           c == '\'' ||
            c == '*'  ||
            c == '+'  ||
            c == '/'  ||
