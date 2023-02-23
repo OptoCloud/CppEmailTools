@@ -48,14 +48,10 @@ constexpr bool IsValidDomainPart(const char*& it)
     char c = 0;
     do {
         const char* startIt = it;
-        if (!IsAlhaNumericChar(*it++)) {
-            return false;
-        }
-
         while (IsAlhaNumericChar(*it)) { it++; }
 
         int dnsLabelLen = it - startIt;
-        if (dnsLabelLen > 63) {
+        if (dnsLabelLen < 1 || dnsLabelLen > 63) {
             return false;
         }
 
